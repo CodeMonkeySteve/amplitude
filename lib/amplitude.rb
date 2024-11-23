@@ -1,3 +1,4 @@
+require 'ostruct'
 require 'httparty'
 require_relative 'amplitude/errors/amplitude_error'
 require_relative 'amplitude/errors/action_error'
