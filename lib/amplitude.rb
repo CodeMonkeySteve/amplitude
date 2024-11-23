@@ -74,10 +74,10 @@ module Amplitude
     ids_action('torrent-reannounce', ids)
   end
 
-  def self.add(filename, metainfo = nil, opts = {})
+  def self.add(filename, metainfo = nil, **opts)
     args = {}
     args[:filename] = filename if filename
-    args[:metainfo] = filename if metainfo
+    args[:metainfo] = metainfo if metainfo
     opts.merge!(args)
     data = client.action('torrent-add', opts)
     if data['torrent-duplicate']
